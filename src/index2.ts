@@ -26,42 +26,42 @@ const slide1: PptxGenJS.Slide = pptxgen.addSlide();
 slide1.addShape(pptxgen.ShapeType.rect, {
   x: 0,
   y: 0,
-  w: pixelToInch(780),
-  h: pixelToInch(11),
+  w: cmToInch(27.52),
+  h: cmToInch(0.4),
   fill: {
     color: Main_Color
   },
 });
 slide1.addShape(pptxgen.ShapeType.rtTriangle, {
-  x: pixelToInch(600),
-  y: pixelToInch(8),
-  w: pixelToInch(57),
-  h: pixelToInch(41),
+  x: cmToInch(21.18),
+  y: cmToInch(0.29),
+  w: cmToInch(2),
+  h: cmToInch(1.43),
   fill: {
     color: Main_Color
   },
   rotate: 180,
 });
 slide1.addShape(pptxgen.ShapeType.rect, {
-  x: pixelToInch(657),
+  x: cmToInch(23.17),
   y: 0,
-  w: pixelToInch(123),
-  h: pixelToInch(49),
+  w: cmToInch(4.35),
+  h: cmToInch(1.72),
   fill: {
     color: Main_Color
   }
 });
 slide1.addImage({
   path: path.resolve(process.env.PWD || '', 'rsquare-logo.png'),
-  sizing: {
+  /* sizing: {
     type: 'contain',
-    w: pixelToInch(135),
-    h: pixelToInch(28),
-  },
-  x: pixelToInch(644),
-  y: pixelToInch(10),
-  w: pixelToInch(135),
-  h: pixelToInch(28),
+    w: cmToInch(4.77),
+    h: cmToInch(1),
+  }, */
+  x: cmToInch(22.72),
+  y: cmToInch(0.36),
+  w: cmToInch(4.77),
+  h: cmToInch(1),
 });
 slide1.addText([
   {
@@ -88,23 +88,23 @@ slide1.addText([
     },
   }
 ], {
-  x: pixelToInch(21.739055118110237),
-  y: pixelToInch(23.77716535433071),
-  w: pixelToInch(623.9974803149606),
-  h: pixelToInch(25.097874015748033)
+  x: cmToInch(0.77),
+  y: cmToInch(0.84),
+  w: cmToInch(22.01),
+  h: cmToInch(0.89)
 });
 slide1.addText('{%buildingImage}', {
-  x: pixelToInch(21.5),
-  y: pixelToInch(60.34),
-  w: pixelToInch(182),
-  h: pixelToInch(29),
+  x: cmToInch(0.76),
+  y: cmToInch(2.13),
+  w: cmToInch(6.66),
+  h: cmToInch(10),
   fontSize: 18
 });
 slide1.addText('건물 개요', {
-  x: pixelToInch(225),
-  y: pixelToInch(60),
-  w: pixelToInch(238),
-  h: pixelToInch(14),
+  x: cmToInch(7.95),
+  y: cmToInch(2.16),
+  w: cmToInch(8.4),
+  h: cmToInch(0.5),
   color: 'FFFFFF',
   align: 'center',
   fontSize: 9,
@@ -115,7 +115,9 @@ slide1.addText('건물 개요', {
 
 const leftTableHeadColumnOptions: PptxGenJS.TableCellProps = {
   color: 'FFFFFF',
-  fontSize: 9,
+  fontFace: 'Noto Sans CJK KR Bold (제목)',
+  bold: true,
+  margin: 0,
   fill: {
     color: '808080',
   },
@@ -191,7 +193,7 @@ slide1.addTable([
       options: leftTableHeadColumnOptions
     },
     {
-      text: '{completedConstructDate}{#remodelingYear > 0} / {remodelingYear} 리모델링'
+      text: '{completedConstructDate}{#remodelingYear > 0} / {remodelingYear} 리모델링{/}'
     }
   ],
   [
@@ -258,17 +260,17 @@ slide1.addTable([
     }
   ]
 ], {
-  x: pixelToInch(225),
-  y: pixelToInch(78),
-  colW: [pixelToInch(64), pixelToInch(174)],
-  rowH: [pixelToInch(21)],
+  x: cmToInch(7.94),
+  y: cmToInch(2.73),
+  colW: [cmToInch(2.25), cmToInch(6.15)],
+  rowH: [cmToInch(0.66)],
   align: 'center',
   valign: 'middle',
-  border: [{ type: 'none' }, { type: 'none' }, { type: 'dash', color: '808080', pt: 0.75 }, { type: 'none' }],
+  border: [{ type: 'none' }, { type: 'none' }, { type: 'solid', color: '808080', pt: 0.75 }, { type: 'none' }],
   fontSize: 8,
 });
 
-slide1.addText([
+/* slide1.addText([
   {
     text: '공실 현황',
     options: {
@@ -278,12 +280,12 @@ slide1.addText([
   {
     text: ''
   }
-]);
+]); */
 slide1.addText('공실 현황', {
-  x: pixelToInch(225),
-  y: pixelToInch(60),
-  w: pixelToInch(238),
-  h: pixelToInch(14),
+  x: cmToInch(16.86),
+  y: cmToInch(2.13),
+  w: cmToInch(9.9),
+  h: cmToInch(0.5),
   color: 'FFFFFF',
   align: 'center',
   fontSize: 9,
