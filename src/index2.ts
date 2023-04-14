@@ -16,8 +16,8 @@ const pptxgen: PptxGenJS = new PptxGenJS();
 
 pptxgen.defineLayout({
   name: 'RSQUARE_LAYOUT',
-  width: pixelToInch(780),
-  height: pixelToInch(540),
+  width: cmToInch(27.52),
+  height: cmToInch(19.05),
 });
 pptxgen.layout = 'RSQUARE_LAYOUT';
 
@@ -32,6 +32,7 @@ slide1.addShape(pptxgen.ShapeType.rect, {
     color: Main_Color
   },
 });
+
 slide1.addShape(pptxgen.ShapeType.rtTriangle, {
   x: cmToInch(21.18),
   y: cmToInch(0.29),
@@ -42,6 +43,7 @@ slide1.addShape(pptxgen.ShapeType.rtTriangle, {
   },
   rotate: 180,
 });
+
 slide1.addShape(pptxgen.ShapeType.rect, {
   x: cmToInch(23.17),
   y: 0,
@@ -51,6 +53,7 @@ slide1.addShape(pptxgen.ShapeType.rect, {
     color: Main_Color
   }
 });
+
 slide1.addImage({
   path: path.resolve(process.env.PWD || '', 'rsquare-logo.png'),
   /* sizing: {
@@ -63,6 +66,7 @@ slide1.addImage({
   w: cmToInch(4.77),
   h: cmToInch(1),
 });
+
 slide1.addText([
   {
     text: '{buildingName}',
@@ -93,6 +97,7 @@ slide1.addText([
   w: cmToInch(22.01),
   h: cmToInch(0.89)
 });
+
 slide1.addText('{%buildingImage}', {
   x: cmToInch(0.76),
   y: cmToInch(2.13),
@@ -100,6 +105,7 @@ slide1.addText('{%buildingImage}', {
   h: cmToInch(10),
   fontSize: 18
 });
+
 slide1.addText('건물 개요', {
   x: cmToInch(7.95),
   y: cmToInch(2.16),
@@ -270,17 +276,6 @@ slide1.addTable([
   fontSize: 8,
 });
 
-/* slide1.addText([
-  {
-    text: '공실 현황',
-    options: {
-
-    }
-  },
-  {
-    text: ''
-  }
-]); */
 slide1.addText('공실 현황', {
   x: cmToInch(16.86),
   y: cmToInch(2.13),
@@ -292,6 +287,16 @@ slide1.addText('공실 현황', {
   fill: {
     color: Main_Color
   }
+});
+
+slide1.addText('(단위: 원/3.3m², VAT별도)', {
+  h: cmToInch(0.46),
+  w: cmToInch(4.53),
+  x: cmToInch(22.23),
+  y: cmToInch(2.15),
+  color: 'FFFFFF',
+  align: 'right',
+  fontSize: 6,
 });
 
 pptxgen.writeFile({

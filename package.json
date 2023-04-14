@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node dist/index1",
+    "start": "tsc && node dist/index6",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "angular-expressions": "^1.1.8",
+    "axios": "^1.3.4",
+    "dayjs": "^1.11.7",
     "docxtemplater": "^3.36.1",
     "docxtemplater-image-module": "https://modules.docxtemplater.com/packages/v2/infra_rsquare/dcdf9f20-4045-4b8b-5f9e-659606d3221a/image-module-3.18.2.tar.gz",
     "docxtemplater-slides-module": "https://modules.docxtemplater.com/packages/v2/infra_rsquare/dcdf9f20-4045-4b8b-5f9e-659606d3221a/slides-module-3.4.6.tar.gz",
